@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Transaction Information" language="groovy" pageWidth="700" pageHeight="842" columnWidth="660" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c87651f9-a4b4-4740-ba3f-ff8039913f17">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT *FROM transactiontbl where pid !='null']]>
+	</queryString>
+	<field name="entryid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="particular" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="remark" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="Sum" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="Count" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{particular}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="66">
+			<staticText>
+				<reportElement x="0" y="0" width="660" height="32" uuid="45481252-d9dd-4039-8c12-3d5f72cebfa8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Transaction Information]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="32" height="32" uuid="fa73ac98-c0f8-4160-b7c5-7d4df06d94a6"/>
+				<imageExpression><![CDATA["C:\\homemgmtsystem\\report\\home.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="0" width="92" height="20" uuid="08fd36ce-ede9-446b-a075-69c9d063f58a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Entry ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="92" height="20" uuid="7f8d8cc5-be87-4a73-be20-3d6abca9b942"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Date ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="0" width="92" height="20" uuid="1d812cc7-53e1-4007-8932-39b245df95d6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Pid ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="92" height="20" uuid="29f31db6-3a06-4ff0-b516-e87328d76232"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Particular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="92" height="20" uuid="16d34bd9-add1-4ce7-ae64-400ad22bf428"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Amount (RS)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="0" width="197" height="20" uuid="5b02f8da-6f21-4a52-8ff6-4b187c82bc55"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Remark]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="10" width="660" height="49" uuid="17d75eb7-881c-4cf4-89ef-95ca1d44e42b"/>
+			</rectangle>
+			<textField>
+				<reportElement x="6" y="21" width="92" height="20" uuid="b881ca24-f0c2-4f83-b162-0968c0eec632"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{entryid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="98" y="21" width="92" height="20" uuid="d0f86cfb-3bc2-435c-95e0-dae3c08f6273"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="21" width="92" height="20" uuid="c607b120-37e5-4f32-9f0d-b29de35cfb8c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="21" width="92" height="20" uuid="616be0b6-3425-4ff7-8e86-ac5947a38dbf"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{particular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="21" width="92" height="20" uuid="bab81787-9596-4632-9245-76a4a90408d8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="466" y="21" width="194" height="38" uuid="08de99a3-7ceb-46c9-b675-e1dd2a6d5ec3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="486" y="0" width="107" height="20" uuid="c4a4031b-6003-4783-9380-8dfde0890d39"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="593" y="0" width="67" height="20" uuid="7ad7bf60-a3e5-4ef0-ba3f-8d6015e3d89e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="EEE, d MMM yyyy HH:mm" isBlankWhenNull="true">
+				<reportElement x="0" y="3" width="235" height="24" uuid="2f0090be-47ed-40a4-b4f6-f4309ebfdae7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="39" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="371" y="15" width="100" height="20" uuid="e5692abb-cb89-43ec-9373-0c359ef9321d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Sum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="282" y="15" width="89" height="20" uuid="a1e209a6-03d7-474a-9b2c-abe0103704a2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Total (Rs)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="112" y="15" width="72" height="20" uuid="6fd008a4-9c8d-4082-b95d-b82c95f7d1cc"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Count}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="15" width="109" height="20" uuid="9febce38-f917-44b6-985d-87bba508a18c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[No Of Records :-]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
