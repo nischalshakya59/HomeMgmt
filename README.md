@@ -1,2 +1,2 @@
 # HomeMgmt
-Desktop application to record expenses incurred in home such as rent, electricity bill etc.
+Desktop application, developed in order to record the expenses incurred in home which includes electricity expenses, water supply expenses etc. 
